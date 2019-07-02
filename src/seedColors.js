@@ -84,7 +84,7 @@ export default [
   {
     paletteName: "Flat UI Colors American",
     id: "flat-ui-colors-american",
-    emoji: <i class="em em-flag-um" />,
+    emoji: <i className="em em-flag-um" />,
     colors: [
       { name: "LightGreenishBlue", color: "#55efc4" },
       { name: "FadedPoster", color: "#81ecec" },
@@ -111,7 +111,7 @@ export default [
   {
     paletteName: "Flat UI Colors Aussie",
     id: "flat-ui-colors-aussie",
-    emoji: <i class="em em-flag-au" />,
+    emoji: <i className="em em-flag-au" />,
     colors: [
       { name: "Beekeeper", color: "#f6e58d" },
       { name: "SpicedNectarine", color: "#ffbe76" },
@@ -165,7 +165,7 @@ export default [
   {
     paletteName: "Flat UI Colors Spanish",
     id: "flat-ui-colors-spanish",
-    emoji: <i class="em em-flag-ea" />,
+    emoji: <i className="em em-flag-ea" />,
     colors: [
       { name: "JacksonsPurple", color: "#40407a" },
       { name: "C64Purple", color: "#706fd3" },
@@ -192,7 +192,7 @@ export default [
   {
     paletteName: "Flat UI Colors Indian",
     id: "flat-ui-colors-indian",
-    emoji: <i class="em em-flag-ie" />,
+    emoji: <i className="em em-flag-ie" />,
     colors: [
       { name: "OrchidOrange", color: "#FEA47F" },
       { name: "SpiroDiscoBall", color: "#25CCF7" },
@@ -219,7 +219,7 @@ export default [
   {
     paletteName: "Flat UI Colors French",
     id: "flat-ui-colors-french",
-    emoji: <i class="em em-fr" />,
+    emoji: <i className="em em-fr" />,
     colors: [
       { name: "FlatFlesh", color: "#fad390" },
       { name: "MelonMelody", color: "#f8c291" },
