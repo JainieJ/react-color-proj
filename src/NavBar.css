@@ -44,3 +44,9 @@
   border: 2px solid green;
   box-shadow: none;
 }
+/* end of slider styles */
+
+.select-container {
+  margin-left: auto;
+  margin-right: 1rem;
+}
