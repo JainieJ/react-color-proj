@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import ColorBox from "./ColorBox";
 import "./Palette.css";
 import NavBar from "./NavBar";
+import PaletteFooter from "./PaletteFooter";
 // import "rc-slider/assets/index.css";
 
 class Palette extends Component {
@@ -35,12 +36,13 @@ class Palette extends Component {
           level={level}
           changeLevel={this.changeLevel}
           handleChange={this.changeFormat}
+          showAllColors={true}
         />
         <div className="Palette-colors">{colorBoxes}</div>
-        <footer className="Palette-footer">
-          {palette.paletteName}
-          <span className="Palette-emoji">{palette.emoji}</span>
-        </footer>
+        <PaletteFooter
+          paletteName={palette.paletteName}
+          emoji={palette.emoji}
+        />
       </div>
     );
   }
