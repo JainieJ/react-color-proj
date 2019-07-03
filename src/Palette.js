@@ -26,6 +26,7 @@ class Palette extends Component {
         key={color.id}
         id={color.id}
         paletteId={palette.id}
+        showLink={true}
       />
     ));
     return (
