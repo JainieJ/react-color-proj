@@ -5,10 +5,19 @@
   display: inline-block;
   position: relative;
   cursor: pointer;
-  margin-bottom: -3.5px;
+  margin-bottom: -4px;
 }
 
-.copy-btn {
+.SingleColorPalette .ColorBox {
+  height: 50%;
+}
+
+.ColorBox.go-back {
+  background: black;
+}
+
+.copy-btn,
+.back-btn {
   width: 100px;
   height: 30px;
   position: absolute;
@@ -25,8 +34,12 @@
   color: white;
   text-transform: uppercase;
   border: none;
-  opacity: 0;
   transition: 0.5s;
+  text-decoration: none;
+}
+
+.copy-btn {
+  opacity: 0;
 }
 
 .ColorBox:hover .copy-btn {
