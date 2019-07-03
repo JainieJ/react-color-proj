@@ -45,7 +45,7 @@ const styles = {
 };
 
 const MiniPalette = props => {
-  const { classes, paletteName, emoji, colors } = props;
+  const { classes, paletteName, emoji, colors, id, handleClick } = props;
   const miniColorBoxes = colors.map(color => (
     <div
       className={classes.miniColor}
@@ -54,7 +54,7 @@ const MiniPalette = props => {
     />
   ));
   return (
-    <div className={classes.root}>
+    <div className={classes.root} onClick={() => handleClick(id)}>
       <div className={classes.colors}>{miniColorBoxes}</div>
       <h5 className={classes.title}>
         {paletteName} <span className={classes.emoji}>{emoji}</span>
