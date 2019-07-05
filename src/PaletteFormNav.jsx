@@ -25,7 +25,8 @@ const styles = theme => ({
       duration: theme.transitions.duration.leavingScreen
     }),
     flexDirection: "row",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
+    alignItems: "center"
   },
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
@@ -39,13 +40,24 @@ const styles = theme => ({
     marginLeft: 12,
     marginRight: 20
   },
-  navBtns: {}
+  navBtns: {
+    marginRight: "1rem"
+  },
+  button: {
+    margin: "0 0.5rem"
+  },
+  link: {
+    textDecoration: "none"
+  }
 });
 
 class PaletteFormNav extends Component {
-  state = {};
+  state = { formShowing: false };
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
+  };
+  showForm = () => {
+    this.setState({ formShowing: true });
   };
   render() {
     const {
@@ -55,7 +67,7 @@ class PaletteFormNav extends Component {
       handleSubmit,
       handleDrawerOpen
     } = this.props;
-    const { newPaletteName } = this.state;
+    const { formShowing } = this.state;
     return (
       <div className={classes.root}>
         <CssBaseline />
@@ -80,20 +92,34 @@ class PaletteFormNav extends Component {
               Create Your Palette
             </Typography>
           </Toolbar>
+          {/* navbar buttons */}
           <div className={classes.navBtns}>
-            {/* start of validation */}
-            <PaletteCreationForm
-              handleSubmit={handleSubmit}
-              palettes={palettes}
-            />
-            {/* end of validation */}
-            <Link to="/">
-              <Button variant="contained" color="secondary">
+            <Link to="/" className={classes.link}>
+              <Button
+                variant="contained"
+                color="secondary"
+                className={classes.button}
+              >
                 Go Back
               </Button>
             </Link>
+            <Button
+              variant="contained"
+              color="primary"
+              className={classes.button}
+              onClick={this.showForm}
+            >
+              Save
+            </Button>
           </div>
         </AppBar>
+        {/* conditional shwoing of palette-save dialog */}
+        {formShowing && (
+          <PaletteCreationForm
+            handleSubmit={handleSubmit}
+            palettes={palettes}
+          />
+        )}
       </div>
     );
   }
