@@ -10,6 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import { Button } from "@material-ui/core";
+import AddToPhotosIcon from "@material-ui/icons/AddToPhotos";
 import PaletteCreationForm from "./PaletteCreationForm";
 import styles from "./styles/PaletteFormNavStyles";
 
@@ -51,7 +52,7 @@ class PaletteFormNav extends Component {
               onClick={handleDrawerOpen}
               className={classNames(classes.menuButton, open && classes.hide)}
             >
-              <MenuIcon />
+              <AddToPhotosIcon />
             </IconButton>
             <Typography variant="h6" color="inherit" noWrap>
               Create Your Palette
