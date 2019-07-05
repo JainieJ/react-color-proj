@@ -6,6 +6,8 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
+import "emoji-mart/css/emoji-mart.css";
+import { Picker } from "emoji-mart";
 
 class PaletteCreationForm extends Component {
   state = {
@@ -20,11 +22,8 @@ class PaletteCreationForm extends Component {
       );
     });
   }
-  handleClickOpen = () => {
-    this.setState({ open: true });
-  };
   handleClose = () => {
-    this.setState({ open: false });
+    this.props.hideForm();
   };
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
@@ -45,6 +44,7 @@ class PaletteCreationForm extends Component {
               Please enter a name for your new palette. Make sure the name is
               unique!
             </DialogContentText>
+            <Picker />
             <TextValidator
               value={newPaletteName}
               label="Palette Name"
