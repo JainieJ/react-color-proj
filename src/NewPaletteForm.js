@@ -91,11 +91,12 @@ class NewPaletteForm extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  handleSubmit = newPaletteName => {
+  handleSubmit = ({ paletteName, emoji }) => {
     const newPalette = {
-      paletteName: newPaletteName,
-      id: newPaletteName.toLowerCase().replace(/ /g, "-"),
-      colors: this.state.colors
+      paletteName: paletteName,
+      id: paletteName.toLowerCase().replace(/ /g, "-"),
+      colors: this.state.colors,
+      emoji
     };
     this.props.savePalette(newPalette);
     this.props.history.push("/");
