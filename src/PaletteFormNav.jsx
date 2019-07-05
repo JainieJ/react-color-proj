@@ -11,6 +11,7 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import { Button } from "@material-ui/core";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
+import PaletteCreationForm from "./PaletteCreationForm";
 
 const drawerWidth = 400;
 
@@ -42,20 +43,18 @@ const styles = theme => ({
 });
 
 class PaletteFormNav extends Component {
-  state = { newPaletteName: "" };
-  componentDidMount() {
-    // custom validation rules to verify that palette name is unique
-    ValidatorForm.addValidationRule("isPaletteNameUnique", value => {
-      return this.props.palettes.every(
-        ({ paletteName }) => paletteName.toLowerCase() !== value.toLowerCase()
-      );
-    });
-  }
+  state = {};
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
   render() {
-    const { classes, open, handleSubmit, handleDrawerOpen } = this.props;
+    const {
+      classes,
+      open,
+      palettes,
+      handleSubmit,
+      handleDrawerOpen
+    } = this.props;
     const { newPaletteName } = this.state;
     return (
       <div className={classes.root}>
@@ -82,19 +81,12 @@ class PaletteFormNav extends Component {
             </Typography>
           </Toolbar>
           <div className={classes.navBtns}>
-            <ValidatorForm onSubmit={() => handleSubmit(newPaletteName)}>
-              <TextValidator
-                value={newPaletteName}
-                label="Palette Name"
-                name="newPaletteName"
-                onChange={this.handleChange}
-                validators={["required", "isPaletteNameUnique"]}
-                errorMessages={["enter palette name", "name already taken"]}
-              />
-              <Button variant="contained" color="primary" type="submit">
-                Save Palette
-              </Button>
-            </ValidatorForm>
+            {/* start of validation */}
+            <PaletteCreationForm
+              handleSubmit={handleSubmit}
+              palettes={palettes}
+            />
+            {/* end of validation */}
             <Link to="/">
               <Button variant="contained" color="secondary">
                 Go Back
