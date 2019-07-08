@@ -40,7 +40,7 @@ export default {
     "& .rc-slider-track": {
       backgroundColor: "transparent"
     },
-    [sizes.down("md")]: {
+    [sizes.down("sm")]: {
       width: "150px"
     }
   },

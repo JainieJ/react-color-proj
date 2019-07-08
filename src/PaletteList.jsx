@@ -12,8 +12,8 @@ import blue from "@material-ui/core/colors/blue";
 import red from "@material-ui/core/colors/red";
 import CheckIcon from "@material-ui/icons/Check";
 import CloseIcon from "@material-ui/icons/Close";
-import MiniPalette from "./MiniPalette";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import MiniPalette from "./MiniPalette";
 import styles from "./styles/PaletteListStyles";
 
 class PaletteList extends Component {
